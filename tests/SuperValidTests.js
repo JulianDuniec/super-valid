@@ -14,6 +14,13 @@ module.exports = {
 		test.done();
 	},
 
+	testNullValues : function(test) {
+		var errors = SuperValid.assert("name", null).notEmpty("EMPTY").errors();
+		test.equals(errors.name.error, "EMPTY");
+		test.equals(errors.name.errors[0], "EMPTY");
+		test.done();
+	},
+
 	testRegex : function(test) {
 		var errors = SuperValid.assert("name", "asd").regex(/asd1/, "INVALID").errors();
 		test.equals(errors.name.error, "INVALID");
@@ -50,8 +57,9 @@ module.exports = {
 				.isEmail("EMAIL")
 				.errors();
 		test.equals(errors.email.error, "EMAIL");
+		
 		var errors = SuperValid
-			.assert("email", "julian@google.com")
+			.assert("email", "julian@internet.com")
 				.isEmail("EMAIL")
 				.errors();
 		test.equals(errors, null);
