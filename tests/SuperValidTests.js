@@ -64,5 +64,45 @@ module.exports = {
 				.errors();
 		test.equals(errors, null);
 		test.done();
+	},
+
+	testInt : function(test) {
+		var errors = SuperValid
+			.assert("number", "asdasd")
+				.isInt("NUMBER")
+				.errors();
+		test.equals(errors.number.error, "NUMBER");
+
+		var errors = SuperValid
+			.assert("number", "11.3")
+				.isInt("NUMBER")
+				.errors();
+		test.equals(errors.number.error, "NUMBER");
+
+
+		var errors = SuperValid
+			.assert("number", "11,3")
+				.isInt("NUMBER")
+				.errors();
+		test.equals(errors.number.error, "NUMBER");
+		
+		var errors = SuperValid
+			.assert("number", "138")
+				.isInt("NUMBER")
+				.errors();
+		test.equals(errors, null);
+
+		var errors = SuperValid
+			.assert("number", "-138")
+				.isInt("NUMBER")
+				.errors();
+		test.equals(errors, null);
+
+		var errors = SuperValid
+			.assert("number", "+138")
+				.isInt("NUMBER")
+				.errors();
+		test.equals(errors, null);
+		test.done();
 	}
 };
