@@ -66,6 +66,20 @@ module.exports = {
 		test.done();
 	},
 
+	testFloat : function(test) {
+		var errors = SuperValid
+			.assert("number", "asdasd")
+				.isFloat("NUMBER")
+				.errors();
+		test.equals(errors.number.error, "NUMBER");
+		var errors = SuperValid
+			.assert("number", "12.3")
+				.isFloat("NUMBER")
+				.errors();
+		test.equals(errors, null);
+		test.done();
+	},
+
 	testInt : function(test) {
 		var errors = SuperValid
 			.assert("number", "asdasd")
@@ -104,5 +118,65 @@ module.exports = {
 				.errors();
 		test.equals(errors, null);
 		test.done();
+	},
+
+	testGT : function(test) {
+		var errors = SuperValid
+			.assert("number", "10")
+				.greaterThan(11, "NUMBER")
+				.errors();
+		test.equals(errors.number.error, "NUMBER");
+
+		var errors = SuperValid
+			.assert("number", "10")
+				.greaterThan(9, "NUMBER")
+				.errors();
+		test.equals(errors, null);
+		test.done();		
+	},
+	
+	testLT : function(test) {
+		var errors = SuperValid
+			.assert("number", "10")
+				.lessThan(9, "NUMBER")
+				.errors();
+		test.equals(errors.number.error, "NUMBER");
+
+		var errors = SuperValid
+			.assert("number", "10")
+				.lessThan(11, "NUMBER")
+				.errors();
+		test.equals(errors, null);
+		test.done();		
+	},
+	
+	testLongerThan : function(test) {
+		var errors = SuperValid
+			.assert("string", "abcdee")
+				.longerThan(6, "STRING")
+				.errors();
+		test.equals(errors.string.error, "STRING");
+
+		var errors = SuperValid
+			.assert("string", "abcdhey")
+				.longerThan(6, "STRING")
+				.errors();
+		test.equals(errors, null);
+		test.done();		
+	},
+
+	testShorterThan : function(test) {
+		var errors = SuperValid
+			.assert("string", "asdfg")
+				.shorterThan(4, "STRING")
+				.errors();
+		test.equals(errors.string.error, "STRING");
+
+		var errors = SuperValid
+			.assert("string", "asd")
+				.shorterThan(4, "STRING")
+				.errors();
+		test.equals(errors, null);
+		test.done();		
 	}
 };

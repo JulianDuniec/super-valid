@@ -17,7 +17,7 @@ var errors = SuperValid
                   .shorterThan(15, "Name too long")
                 .assert("age", req.params.age)
                   .isInt("Not a number")
-                  .biggerThan(18, "Age too little")
+                  .greaterThan(18, "Age too little")
                   .errors();
 if(errors) {
   console.log(errors);
