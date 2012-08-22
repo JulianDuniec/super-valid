@@ -37,3 +37,14 @@ if(errors) {
     */
 }
 ```
+| Method                                  | Description |
+|:-----------                             |:------------|
+| notEmpty(errorMessage)                  | Ensures that the string is not empty    
+| longerThan(len, errorMessage)           | Ensures that the string is longer than len
+| shorterThan(len, errorMessage)          | Ensures that the string is shorter than len
+| isEmail(errorMessage)                   | Ensures that the string is an email-address
+| regex(regex, errorMessage)              | Ensures that the string matches the supplied regular expression 
+| isInt(errorMessage)                     | Ensures that the value is a valid integer
+| isFloat(errorMessage)                   | Ensures that the value is a valid float
+| greaterThan(min, errorMessage)          | Ensures that the value is a number greater than min
+| lessThan(max, errorMessage)             | Ensures that the value is a number less than min
