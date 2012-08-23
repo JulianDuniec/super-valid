@@ -31,6 +31,17 @@ module.exports = {
 		test.done();
 	},
 
+	testBool : function(test) {
+		var errors = SuperValid.assert("poop", "asd").isBool("INVALID").errors();
+		test.equals(errors.poop.error, "INVALID");
+		
+		var errors = SuperValid.assert("poop", "true").isBool("INVALID").errors();
+		test.equals(errors, null);
+		var errors = SuperValid.assert("poop", "false").isBool("INVALID").errors();
+		test.equals(errors, null);
+		test.done();
+	},
+
 	testMultiple : function(test) {
 		var errors = SuperValid.assert("name", "").regex(/asd/, "REGEX").notEmpty("EMPTY").errors();
 		test.equals(errors.name.error, "EMPTY");
