@@ -2,7 +2,7 @@
 	"name" : "super-valid",
 	"version" : "0.1.0",
 	"dependencies" : {
-		
+		"nodeunit" : "*"
 	},
 	"scripts" : {
 		"test" : "nodeunit tests"
