@@ -1,3 +1,5 @@
+[![build status](https://secure.travis-ci.org/JulianDuniec/super-valid.png)](http://travis-ci.org/JulianDuniec/super-valid)
+
 super-valid
 ===========
 
