@@ -50,4 +50,4 @@ if(errors) {
 | isFloat(errorMessage)                   | Ensures that the string is a valid float
 | greaterThan(min, errorMessage)          | Ensures that the string is a number greater than min
 | lessThan(max, errorMessage)             | Ensures that the string is a number less than min
-| isBool(errorMessage)             | Ensures that the value is equal to "true" or "false"
+| isBool(errorMessage)                    | Ensures that the string is equal to "true" or "false"
