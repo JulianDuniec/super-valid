@@ -48,4 +48,3 @@ if(errors) {
 | isFloat(errorMessage)                   | Ensures that the value is a valid float
 | greaterThan(min, errorMessage)          | Ensures that the value is a number greater than min
 | lessThan(max, errorMessage)             | Ensures that the value is a number less than min
-| isBool(errorMessage)             | Ensures that the value is a boolean
