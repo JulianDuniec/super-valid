@@ -1,3 +1,5 @@
+[![build status](https://secure.travis-ci.org/JulianDuniec/super-valid.png)](http://travis-ci.org/JulianDuniec/super-valid)
+
 super-valid
 ===========
 
@@ -44,7 +46,15 @@ if(errors) {
 | shorterThan(len, errorMessage)          | Ensures that the string is shorter than len
 | isEmail(errorMessage)                   | Ensures that the string is an email-address
 | regex(regex, errorMessage)              | Ensures that the string matches the supplied regular expression 
+<<<<<<< HEAD
 | isInt(errorMessage)                     | Ensures that the value is a valid integer
 | isFloat(errorMessage)                   | Ensures that the value is a valid float
 | greaterThan(min, errorMessage)          | Ensures that the value is a number greater than min
 | lessThan(max, errorMessage)             | Ensures that the value is a number less than min
+=======
+| isInt(errorMessage)                     | Ensures that the string is a valid integer
+| isFloat(errorMessage)                   | Ensures that the string is a valid float
+| greaterThan(min, errorMessage)          | Ensures that the string is a number greater than min
+| lessThan(max, errorMessage)             | Ensures that the string is a number less than min
+| isBool(errorMessage)                    | Ensures that the string is equal to "true" or "false"
+>>>>>>> ef667023ffd50a7f49804a69bd4237587aa30992
