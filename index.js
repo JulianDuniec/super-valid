@@ -1,1 +1,1 @@
-module.exports = require('./lib/superValid.js');
+module.exports = require('./lib/SuperValid.js');
